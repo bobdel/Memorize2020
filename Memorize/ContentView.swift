@@ -16,7 +16,9 @@ struct ContentView: View {
     var body: some View {
         HStack {
             ForEach(viewModel.cards) { card in
-                CardView(card: card)
+                CardView(card: card).onTapGesture {
+                    self.viewModel.chooseCard(card: card) // trigger the user intent
+                }
             }
         }
         .padding()
