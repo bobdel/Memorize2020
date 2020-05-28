@@ -6,6 +6,8 @@
 //  Copyright © 2020 Robert DeLaurentis. All rights reserved.
 //
 
+// MVVM Component - This is a View
+
 import SwiftUI
 
 struct ContentView: View {
