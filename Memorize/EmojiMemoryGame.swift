@@ -18,18 +18,18 @@ class EmojiMemoryGame {
     private var model: MemoryGame<String> = EmojiMemoryGame.createMemoryGame()
 
     static func createMemoryGame() -> MemoryGame<String> {
-        let emojis = ["👻", "🎃", "🕷"]
-        return MemoryGame<String>(numberOfPairsOfCards: emojis.count) { pairIndex in
+        let emojis = ["👻", "🎃", "🕷", "👹", "🧟"]
+        return MemoryGame<String>(numberOfPairsOfCards: emojis.count - Int.random(in: 0..<3)) { pairIndex in
             return emojis[pairIndex]
         }
     }
 
     // MARK: -  Access the Model
 
-    // instead of using set on this class, read the var
+    // instead of using private(set) on this class, read the var
     // present the cards in a form more easily consumable by the view
     var cards: Array<MemoryGame<String>.Card> {
-        model.cards
+        model.cards.shuffled()
     }
 
     // MARK: -  Intent(s)

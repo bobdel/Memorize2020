@@ -18,11 +18,12 @@ struct ContentView: View {
             ForEach(viewModel.cards) { card in
                 CardView(card: card).onTapGesture {
                     self.viewModel.chooseCard(card: card) // trigger the user intent
-                }
+                }.aspectRatio(0.66, contentMode: .fit)
             }
         }
         .padding()
         .foregroundColor(.orange)
+        .font( (viewModel.cards.count == 10) ? .body : .largeTitle)
     }
 }
 
