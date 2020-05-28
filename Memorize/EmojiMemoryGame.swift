@@ -15,7 +15,14 @@ class EmojiMemoryGame {
     // Explicit name used for instructional purposes. Better would be game or memoryGame.
     // The paramaterized type tells the model that this game uses strings.
     // private closes off objects to "see" the model directly
-    private var model: MemoryGame<String>
+    private var model: MemoryGame<String> = EmojiMemoryGame.createMemoryGame()
+
+    static func createMemoryGame() -> MemoryGame<String> {
+        let emojis: Array<String> = ["👻", "🎃"]
+        return MemoryGame<String>(numberOfPairsOfCards: 2) { pairIndex in
+            return emojis[pairIndex]
+        }
+    }
 
     // MARK: -  Access the Model
 
