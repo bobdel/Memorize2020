@@ -6,14 +6,14 @@
 //  Copyright © 2020 Robert DeLaurentis. All rights reserved.
 //
 
-// MVVM Component - This is a View
+// MVVM View (init by SceneDelegate)
 
 import SwiftUI
 
 struct EmojiMemoryGameView: View {
     // get a reference to the view model component (note its a pointer)
     // that was initialized in the scene delegate.
-    var viewModel: EmojiMemoryGame
+    @ObservedObject var viewModel: EmojiMemoryGame
 
     var body: some View {
         HStack {

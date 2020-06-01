@@ -83,10 +83,10 @@
 			children = (
 				714735C3247DDA8000417AE6 /* AppDelegate.swift */,
 				714735C5247DDA8000417AE6 /* SceneDelegate.swift */,
-				712CD09E247F55A8004D3EFD /* view model (init first by SceneDelegate) */,
-				712CD09B247F4094004D3EFD /* EmojiMemoryGame.swift */,
 				712CD09F247F55B3004D3EFD /* view (init second by SceneDelegate) */,
 				714735C7247DDA8000417AE6 /* EmojiMemoryGameView.swift */,
+				712CD09E247F55A8004D3EFD /* view model (init first by SceneDelegate) */,
+				712CD09B247F4094004D3EFD /* EmojiMemoryGame.swift */,
 				712CD09D247F5594004D3EFD /* Model (init third by view model) */,
 				712CD099247F3E4C004D3EFD /* MemoryGame.swift */,
 				714735C9247DDA8200417AE6 /* Assets.xcassets */,

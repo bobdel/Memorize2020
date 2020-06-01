@@ -6,15 +6,26 @@
 //  Copyright © 2020 Robert DeLaurentis. All rights reserved.
 //
 
-// MVVM Component - This is the Model
+// MVVM Model (init by ViewModel)
 
 import Foundation
 
 struct MemoryGame<CardContent> {
     var cards: Array<Card>
 
-    func choose(card: Card) {
+    mutating func choose(card: Card) {
         print("Card Chosen: \(card)")
+        let chosenIndex = index(of: card)
+        cards[chosenIndex].isFaceUp = !cards[chosenIndex].isFaceUp
+    }
+
+    func index(of card: Card) -> Int {
+        for index in 0..<cards.count {
+            if cards[index].id == card.id {
+                return index
+            }
+        }
+        return 0 // bogus! TODO: Fix this
     }
 
     // MARK: - Initializer
@@ -26,7 +37,10 @@ struct MemoryGame<CardContent> {
             cards.append(Card(content: content, id: pairIndex * 2))
             cards.append(Card(content: content, id: pairIndex * 2 + 1))
         }
+        cards.shuffle()
     }
+
+    // MARK: - Individual Card
 
     struct Card: Identifiable {
         var isFaceUp: Bool = true
