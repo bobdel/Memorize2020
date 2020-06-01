@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  EmojiMemoryGameView.swift
 //  Memorize
 //
 //  Created by Robert DeLaurentis on 5/26/20.
@@ -10,14 +10,16 @@
 
 import SwiftUI
 
-struct ContentView: View {
-    var viewModel: EmojiMemoryGame // get a reference to the view model component (note its a pointer) that was initialized in the scene delegate.
+struct EmojiMemoryGameView: View {
+    // get a reference to the view model component (note its a pointer)
+    // that was initialized in the scene delegate.
+    var viewModel: EmojiMemoryGame
 
     var body: some View {
         HStack {
             ForEach(viewModel.cards) { card in
                 CardView(card: card).onTapGesture {
-                    self.viewModel.chooseCard(card: card) // trigger the user intent
+                    self.viewModel.chooseCard(card: card) // trigger the intent
                 }.aspectRatio(0.66, contentMode: .fit)
             }
         }
@@ -43,9 +45,8 @@ struct CardView: View {
     }
 }
 
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(viewModel: EmojiMemoryGame())
+        EmojiMemoryGameView(viewModel: EmojiMemoryGame())
     }
 }
