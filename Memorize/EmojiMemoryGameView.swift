@@ -6,7 +6,7 @@
 //  Copyright © 2020 Robert DeLaurentis. All rights reserved.
 //
 
-// MVVM View (init by SceneDelegate)
+    // MARK: -  View (init by SceneDelegate)
 
 import SwiftUI
 

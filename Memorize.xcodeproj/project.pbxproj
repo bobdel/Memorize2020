@@ -17,6 +17,7 @@
 		714735CA247DDA8200417AE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 714735C9247DDA8200417AE6 /* Assets.xcassets */; };
 		714735CD247DDA8200417AE6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 714735CC247DDA8200417AE6 /* Preview Assets.xcassets */; };
 		714735D0247DDA8200417AE6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 714735CE247DDA8200417AE6 /* LaunchScreen.storyboard */; };
+		71F0A8302486DB2F000521F3 /* Array+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F0A82F2486DB2F000521F3 /* Array+Identifiable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		714735CC247DDA8200417AE6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		714735CF247DDA8200417AE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		714735D1247DDA8200417AE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		71F0A82F2486DB2F000521F3 /* Array+Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Identifiable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 				714735C9247DDA8200417AE6 /* Assets.xcassets */,
 				711CDE1F2486A6FD00F9822A /* GridLayout.swift */,
 				711CDE212486AB5600F9822A /* Grid.swift */,
+				71F0A82F2486DB2F000521F3 /* Array+Identifiable.swift */,
 				714735CE247DDA8200417AE6 /* LaunchScreen.storyboard */,
 				714735D1247DDA8200417AE6 /* Info.plist */,
 				714735CB247DDA8200417AE6 /* Preview Content */,
@@ -187,6 +190,7 @@
 				712CD09A247F3E4C004D3EFD /* MemoryGame.swift in Sources */,
 				711CDE202486A6FD00F9822A /* GridLayout.swift in Sources */,
 				714735C8247DDA8000417AE6 /* EmojiMemoryGameView.swift in Sources */,
+				71F0A8302486DB2F000521F3 /* Array+Identifiable.swift in Sources */,
 				711CDE222486AB5600F9822A /* Grid.swift in Sources */,
 				712CD09C247F4094004D3EFD /* EmojiMemoryGame.swift in Sources */,
 			);

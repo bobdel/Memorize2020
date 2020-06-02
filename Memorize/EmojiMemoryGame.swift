@@ -6,7 +6,7 @@
 //  Copyright © 2020 Robert DeLaurentis. All rights reserved.
 //
 
-// MVVM ViewModel (init by SceneDelegate)
+    // MARK: -  ViewModel (init by SceneDelegate)
 
 import SwiftUI
 

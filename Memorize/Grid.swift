@@ -34,7 +34,7 @@ struct Grid<Item, ItemView>: View where Item: Identifiable, ItemView: View {
 
     // offer it to subviews (.frame), position the views
     func body(for item: Item, in layout: GridLayout) -> some View {
-        let index = self.index(of: item)
+        let index = items.firstIndex(matching: item)
         return viewForItem(item)
                 .frame(width: layout.itemSize.width, height: layout.itemSize.height)
                 .position(layout.location(ofItemAt: index))
@@ -49,5 +49,3 @@ struct Grid<Item, ItemView>: View where Item: Identifiable, ItemView: View {
         return 0
     }
 }
-
-
