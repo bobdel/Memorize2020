@@ -11,7 +11,7 @@
 import Foundation
 
 struct MemoryGame<CardContent> where CardContent: Equatable {
-    var cards: Array<Card>
+    var cards: Array<Card> // the app's data
 
     var indexOfTheOneAndOnlyFaceUpCard: Int? {
         get { cards.indices.filter { cards[$0].isFaceUp }.only }
@@ -22,10 +22,12 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
         }
     }
 
+    // MARK: -  Play Game
+
     mutating func choose(card: Card) {
         if let chosenIndex = cards.firstIndex(matching: card),
             !cards[chosenIndex].isFaceUp,
-            !cards[chosenIndex].isMatched {
+            !cards[chosenIndex].isMatched { // continue after 3 true conditional tests
             if let potentialMatchIndex = indexOfTheOneAndOnlyFaceUpCard {
                 if cards[chosenIndex].content == cards[potentialMatchIndex].content { // cards match
                     cards[chosenIndex].isMatched = true
@@ -40,6 +42,7 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
 
     // MARK: - Initializer
 
+    // called by the ViewModel and assigned into a @published var named "model"
     init(numberOfPairsOfCards: Int, cardContentFactory: (Int) -> CardContent) {
         cards = Array<Card>()
         for pairIndex in 0..<numberOfPairsOfCards {

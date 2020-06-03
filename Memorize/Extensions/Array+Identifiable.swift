@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Return the index of the first match to an item's content
 extension Array where Element: Identifiable {
     func firstIndex(matching: Element) -> Int? {
         for index in 0..<self.count {

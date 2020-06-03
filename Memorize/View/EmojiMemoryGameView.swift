@@ -15,7 +15,7 @@ struct EmojiMemoryGameView: View {
     // that was initialized in the scene delegate.
     @ObservedObject var viewModel: EmojiMemoryGame
 
-    var body: some View {
+    var body: some View { // main view
         Grid(viewModel.cards) { card in
                 CardView(card: card).onTapGesture {
                     self.viewModel.chooseCard(card: card) // trigger the intent
@@ -27,7 +27,7 @@ struct EmojiMemoryGameView: View {
     }
 }
 
-struct CardView: View {
+struct CardView: View { // individual card subview
     var card: MemoryGame<String>.Card
 
     var body: some View {
@@ -55,7 +55,8 @@ struct CardView: View {
 
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct ContentView_Previews: PreviewProvider { // Preview Generator
+
     static var previews: some View {
         EmojiMemoryGameView(viewModel: EmojiMemoryGame())
     }

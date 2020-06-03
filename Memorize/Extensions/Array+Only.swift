@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Return the element of a 1 item array
 extension Array {
     var only: Element? {
         count == 1 ? first : nil

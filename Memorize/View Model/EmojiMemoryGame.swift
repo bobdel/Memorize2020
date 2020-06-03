@@ -11,10 +11,8 @@
 import SwiftUI
 
 class EmojiMemoryGame: ObservableObject {
-    // This is a handle to the model.
-    // Explicit name used for instructional purposes. Better would be game or memoryGame.
+
     // The paramaterized type tells the model that this game uses strings.
-    // private closes off objects to "see" the model directly
     @Published private var model: MemoryGame<String> = EmojiMemoryGame.createMemoryGame()
 
     static func createMemoryGame() -> MemoryGame<String> {
@@ -27,14 +25,12 @@ class EmojiMemoryGame: ObservableObject {
 
     // MARK: -  Access the Model
 
-    // instead of using private(set) on this class, read the var
-    // present the cards in a form more easily consumable by the view
+    // present the cards in a form easily readable by the view
     var cards: Array<MemoryGame<String>.Card> {
         model.cards
     }
 
-    // MARK: -  Intent(s)
-    // functions that allow views to access the model. Essentially openings in the glass door.
+    // Intent(s)
 
     func chooseCard(card: MemoryGame<String>.Card) {
         model.choose(card: card)
