@@ -49,9 +49,9 @@ struct CardView: View { // individual card subview
 
     // MARK: - Drawing Constants
 
-    let cornerRadius: CGFloat = 10.0
-    let edgeLineWidth: CGFloat = 3
-    let fontScaleFactor: CGFloat = 0.75
+   private let cornerRadius: CGFloat = 10.0
+   private let edgeLineWidth: CGFloat = 3
+   private let fontScaleFactor: CGFloat = 0.75
 
 }
 
