@@ -9,8 +9,21 @@
 import SwiftUI
 
 /// A custom ViewModifier to convert a view into a card like view.
-struct Cardify: ViewModifier {
-    var isFaceUp: Bool
+struct Cardify: AnimatableModifier {
+    var rotation: Double
+
+    init(isFaceUp: Bool) {
+        rotation = isFaceUp ? 0 : 180
+    }
+    
+    var isFaceUp: Bool {
+        rotation < 90
+    }
+
+    var animatableData: Double { // conforms to AnimatableModifer and vends better name
+        get { return rotation}
+        set { rotation = newValue }
+    }
 
     func body(content: Content) -> some View {
         ZStack {
@@ -22,6 +35,7 @@ struct Cardify: ViewModifier {
                 RoundedRectangle(cornerRadius: self.cornerRadius).fill()
             }
         }
+        .rotation3DEffect(Angle.degrees(rotation), axis: (0,1,0))
     }
 
      // MARK: - Drawing Constants

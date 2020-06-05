@@ -14,7 +14,7 @@ struct EmojiMemoryGameView: View {
     // get a reference to the view model component (note its a pointer)
     // that was initialized in the scene delegate.
     @ObservedObject var viewModel: EmojiMemoryGame
-    
+
     var body: some View { // main view
         VStack {
             Grid(viewModel.cards) { card in
@@ -38,13 +38,13 @@ struct EmojiMemoryGameView: View {
 
 struct CardView: View { // individual card subview
     var card: MemoryGame<String>.Card
-    
+
     var body: some View { // small block to drop requirement for self below
         GeometryReader { geometry in
             self.body(for: geometry.size)
         }
     }
-    
+
     @ViewBuilder //  it will return nothing or a list of items
     private func body(for size: CGSize) -> some View {
         if card.isFaceUp || !card.isMatched {
@@ -60,16 +60,16 @@ struct CardView: View { // individual card subview
             .transition(AnyTransition.scale)
         }
     }
-    
+
     // MARK: - Drawing Constants
-    
+
     private func fontSize(for size: CGSize) -> CGFloat {
         min(size.width, size.height) * 0.7
     }
 }
 
 struct ContentView_Previews: PreviewProvider { // Preview Generator
-    
+
     static var previews: some View {
         EmojiMemoryGameView(viewModel: EmojiMemoryGame())
     }
