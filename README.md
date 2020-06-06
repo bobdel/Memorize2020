@@ -10,4 +10,4 @@ File organization is rather different than presented, with liberal use of Group 
 
 ## Bonus Time Code
 
-Available as a Gist https://gist.github.com/bobdel/d14ccb7c37676e9e78186c2297108cb7
+Available as a [Gist](https://gist.github.com/bobdel/d14ccb7c37676e9e78186c2297108cb7)
